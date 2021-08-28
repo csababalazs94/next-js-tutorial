@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
+import Layout from '../components/layout';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
@@ -16,34 +15,55 @@ export default function Home({
   }[];
 }) {
   return (
-    <Layout home>
+    <>
       <Head>
-        <title>{siteTitle}</title>
+        <title>Reka Blog</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </Layout>
+      <Layout>
+        <section className="text-gray-600 body-font overflow-hidden">
+          <div className="container px-5 py-24 mx-auto">
+            <div className="-my-8 divide-y-2 divide-gray-100">
+              {allPostsData.map(({ id, date, title }) => (
+                <div className="py-8 flex flex-wrap md:flex-nowrap">
+                  <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                    <span className="font-semibold title-font text-gray-700">
+                      Blog Post
+                    </span>
+                    <span className="mt-1 text-gray-500 text-sm">
+                      <Date dateString={date} />
+                    </span>
+                  </div>
+
+                  <div className="md:flex-grow">
+                    <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
+                      {title}
+                    </h2>
+                    <p className="leading-relaxed">Preview.</p>
+                    <Link href={`/posts/${id}`}>
+                      <a className="text-indigo-500 inline-flex items-center mt-4">
+                        Learn More
+                        <svg
+                          className="w-4 h-4 ml-2"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="M5 12h14"></path>
+                          <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </Layout>
+    </>
   );
 }
 
