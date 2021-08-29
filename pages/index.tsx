@@ -22,7 +22,7 @@ export default function Home({
       <Layout>
         <section className="text-gray-600 body-font overflow-hidden">
           <div className="container px-5 py-24 mx-auto">
-            <div className="-my-8 divide-y-2 divide-gray-100">
+            <div className="-my-8 divide-y-2 divide-gray-200">
               {allPostsData.map(({ id, date, title }) => (
                 <div className="py-8 flex flex-wrap md:flex-nowrap">
                   <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
@@ -51,8 +51,8 @@ export default function Home({
                           stroke-linecap="round"
                           stroke-linejoin="round"
                         >
-                          <path d="M5 12h14"></path>
-                          <path d="M12 5l7 7-7 7"></path>
+                          {/* <path d="M5 12h14"></path>
+                           <path d="M12 5l7 7-7 7"></path> */}
                         </svg>
                       </a>
                     </Link>
