@@ -70,7 +70,10 @@ const Footer: React.FunctionComponent = () => {
               <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
             </svg>
           </a>
-          <a className="ml-3 text-gray-500">
+          <a
+            className="ml-3 text-gray-500"
+            href="https://www.linkedin.com/in/réka-born-33574b150/"
+          >
             <svg
               fill="currentColor"
               stroke="currentColor"
