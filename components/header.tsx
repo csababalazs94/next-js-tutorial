@@ -23,7 +23,7 @@ const Header: React.FunctionComponent = () => {
           <Link href="/">
             <a className="mr-5 hover:text-gray-900">Blog</a>
           </Link>
-          <Link href="/gallery/gallery">
+          <Link href="/gallery">
             <a className="mr-5 hover:text-gray-900">Gallery</a>
           </Link>
           <Link href="/about">

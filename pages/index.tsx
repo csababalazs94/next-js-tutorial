@@ -1,9 +1,12 @@
-import Head from 'next/head';
-import Layout from '../components/layout';
 import { getSortedPostsData } from '../lib/posts';
-import Link from 'next/link';
-import Date from '../components/date';
+import { Parallax } from 'react-scroll-parallax';
 import { GetStaticProps } from 'next';
+import d from '../public/images/d.png';
+import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
+import Layout from '../components/layout';
+import Date from '../components/date';
 
 export default function Home({
   allPostsData,
@@ -20,6 +23,9 @@ export default function Home({
         <title>Reka Blog</title>
       </Head>
       <Layout>
+        <Parallax className="flex" y={[-20, 20]} tagOuter="figure">
+          <Image src={d} height={600} />
+        </Parallax>
         <section className="text-gray-600 body-font overflow-hidden">
           <div className="container px-5 py-24 mx-auto">
             <div className="-my-8 divide-y-2 divide-gray-200">
