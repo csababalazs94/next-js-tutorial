@@ -1,12 +1,12 @@
-import Head from 'next/head';
-import Layout from '../components/layout';
 import { getSortedPostsData } from '../lib/posts';
-import Link from 'next/link';
-import Image from 'next/image';
-import Date from '../components/date';
+import { Parallax } from 'react-scroll-parallax';
 import { GetStaticProps } from 'next';
 import d from '../public/images/d.png';
-import { Parallax } from 'react-scroll-parallax';
+import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
+import Layout from '../components/layout';
+import Date from '../components/date';
 
 export default function Home({
   allPostsData,
